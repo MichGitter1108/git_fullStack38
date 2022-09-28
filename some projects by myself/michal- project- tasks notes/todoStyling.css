@@ -1,0 +1,86 @@
+body, html 
+{
+    /*perfect css image background*/
+    background: url(backgroundImage.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+h1 
+{
+    text-align: center;
+    font-family: "Indie Flower", cursive;
+    color: black;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+input 
+{
+    border: 3px solid white;
+    border-radius: 10px;
+    background-color: lightgray;
+}
+
+textarea 
+{
+    background-image: url("lines.png");
+    font-size: 20px;
+    width: 370px;
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.note 
+{
+    background-image: url(noteBG.png);
+    width: 200px;
+    height: 250px;
+    animation: fadeInAnimation ease 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation 
+{
+    0% 
+    {
+    opacity: 0;
+    }
+    100% 
+    {
+    opacity: 1;
+    }
+}
+
+
+.note i
+{
+    visibility: hidden;
+}
+
+.note:hover i
+{
+    visibility: visible;
+}
+
+.note i:hover 
+{
+    font-weight: bold;
+    cursor: pointer;
+    transform: scale(1.25);
+    filter: brightness(120%);
+}
+
+.content 
+{
+    margin-top: 40px;
+    height: 150px;
+    width: 150px;
+    overflow: auto;
+}
+
