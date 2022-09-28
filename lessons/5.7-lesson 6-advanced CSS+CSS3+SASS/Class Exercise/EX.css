@@ -1,0 +1,29 @@
+html,body
+{
+    background-color: aquamarine; 
+}
+
+@keyframes flower
+{
+    /*it's possible to use 0-1 opacity instead of percents*/
+    0%{left:0px;top:0px;}
+    12%{opacity:0%;}
+    25%{left:500px;top:0px;opacity: 100%}
+    38%{opacity: 0%;}
+    50%{left:500px;top:500px; opacity: 100%}
+    62%{opacity: 0%;}
+    75%{left:0px;top:500px; opacity: 100%}
+    87%{opacity: 0%;}
+    100%{left:0px;top:0px;}
+}
+
+img
+{
+
+    border: 2px solid black;
+    width: 500px;
+    position: relative;/*must when we work with left and top on animation*/
+    animation-name: flower;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}

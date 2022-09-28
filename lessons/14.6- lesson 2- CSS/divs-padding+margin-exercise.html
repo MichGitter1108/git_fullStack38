@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .mainDiv
+        {
+            border: solid white;
+            border-radius: 50px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-top: 50px;
+            padding: 30px;
+            background-color: black;
+            font-size: 65px;
+            text-align: center;
+            color: white;
+        }
+        .Div1 /*if not- all the divs will be printed by white (the "mainDiv")*/
+        {
+            border: solid white;
+            border-radius: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 10px;
+            background-color: rgb(237, 159, 64);
+            font-size: 35px;
+            text-align: right;
+            text-align: center;
+        }
+        .Div2 /*if not- all the divs will be printed by grey (the "mainDiv")*/
+        {
+            border: solid white;
+            border-radius: 50px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin-top: 10px;
+            padding: 30px;
+            background-color: rgb(237, 64, 64);
+            font-size: 20px;
+            text-align: center;
+        }
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div inside Div</title>
+</head>
+
+<body style="background-color: rgb(71, 179, 233) ;">
+    <div class="mainDiv">
+        radio
+        <div class="Div1">
+            stations
+            <div class="Div2">
+                99fm, radius100 fm, galgalatz...
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

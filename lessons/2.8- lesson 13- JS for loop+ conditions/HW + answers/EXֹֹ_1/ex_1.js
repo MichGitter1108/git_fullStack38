@@ -1,0 +1,11 @@
+for ( var i = 1; i <= 10; i++ )
+{
+    if ( i != 7 )
+    {
+        console.log( i );
+    }
+}
+
+
+
+

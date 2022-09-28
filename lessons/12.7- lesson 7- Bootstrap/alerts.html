@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--css of bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"/>
+    <!--JS of bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.css"></script>
+
+    <title>Alerts</title>
+</head>
+<body>
+    <br><br>
+    <div class="container">
+        <div class="alert alert-success">
+            <strong>Success!</strong> Michal loves full stack <!--strong= bold-->
+            <a href="#" class="alert-link">show me the money</a>
+        </div>
+
+        <br><br>
+        <div class="alert alert-danger">
+            <strong>Danger!!</strong> Vika is coming to class
+            <a href="#" class="alert-link">Run home!</a> <!--class="alert link"- fit the color of 
+            the link to the color of the alert div-->
+        </div>
+
+        <br><br>
+
+        <div class="alert alert-warning">
+            <strong>Warning</strong> Low Nicotine <!--strong= bold-->
+            <a href="#" class="alert-link">תקנה סיגריות</a>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <!--data-bs-dismiss="alert" -> when we click at the X button all this div disappears-->
+        </div>
+
+        <br><br>
+        <div class="alert alert-success alert-dismissible fade show"> <!--alert-dismissible- the X button is on the side of the div-->
+            <strong>Success</strong> soon i at home <!--strong= bold-->
+            <a href="#" class="alert-link">go home</a>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <!--data-bs-dismiss="alert" -> when we click at the X button all this div disappears-->
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+html, body
+{
+    background-image: url(background.jpg);
+}
+
+.mainTitle
+{
+    font-weight: bold;
+    margin-top: 15px;
+    color: white;
+    font-family: cursive;
+    font-size: 25px;
+}
+
+.ToDoTitle
+{
+    background-color: rgb(77, 135, 228);
+    width: 250px;
+    height: 50px;
+    margin: auto;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    -moz-box-shadow: 4px 4px 7px 3px #333333; 
+	-webkit-box-shadow: 4px 4px 7px 3px #333333; 
+	box-shadow: 4px 4px 7px 3px #333333;
+}
+
+.titleDV
+{
+    font-size: 15px;
+}
+
+.hrDV
+{
+    background-color: red;
+    height: 1px;
+    margin: 7px 0px;
+}
+
+.IdDV
+{
+    margin-left: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration-line: underline;
+    text-decoration-color: rgb(198, 174, 107);
+}
+
+.pth
+{
+    font-family: Cursive;
+    border: 1px solid rgb(171, 162, 162);
+    background-color:rgb(229, 234, 158);
+    margin-top: 15px;
+    width: 200px;
+    height: 150px;
+    padding: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 4px 5px 14px 0px black; 
+	-webkit-box-shadow: 4px 5px 14px 0px black; 
+	box-shadow: 4px 5px 14px 0px black; 
+}
+

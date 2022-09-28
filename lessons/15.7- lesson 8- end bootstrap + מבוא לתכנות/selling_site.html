@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>Selling site</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col"><img src="media/candy.png" width="100px"></div>
+            <div class="col">Magid candies</div>
+            <div class="col">
+                <!--shopping cart button with the modal-->
+                <button type="button" class="btn btn-primary" value="shopping cart" 
+                data-bs-toggle="modal" data-bs-target="#shoppingCart">Shopping cart <span class="badge bg-danger">5</span></button>
+
+                <!--login cart button with the modal-->
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#loginForm">Login</button>
+            </div>
+        </div>
+        
+        <button type="button" class="btn btn-dark" data-bs-target="#addItem" data-vs-toggle="modal"> add item </button> <!--add information-->
+        <!--data-bs-target-> active on the modal of it's id (if there are more than one)-->
+        <!--data-bs-toggle-> if theres is, turn on. if not- show the modal -->
+        
+        
+        <!--***********add item modal**********-->
+        <div class="modal" id="addItem">
+            <div class="midal-dialog">
+                <div class="modal-content">
+                    <!--header-->
+                    <div class="modal-header">
+                        <h1 class="modal-title">Add new item</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <!--body-->
+                    what is your age?
+                    <input type="number" placeholder="age between 1 and 120"/>
+                    <!--footer-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Add item</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--*****************the bootstrap modal- shopping cart************************-->
+
+        <div class="modal" id="shoppingCart">
+            <div class="modal-dialog"><!--pop up in front the screen-like dialog-->
+                <div modal class="modal-content"><!--the content of the modal-message-->
+                    <!--*part 1*-modal header-->
+                    <div class="modal-header">
+                        <h2 class="modal-title">Shopping cart</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <!--*part 2*-modal body-->
+                    <div class="modal-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>name</th>
+                                    <th>Qty.</th>
+                                    <th>item price</th>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>1</td>
+                                <td>iphone 13 Pro</td>
+                                <td>2</td>
+                                <td>5555</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Apple air m2</td>
+                                <td>1</td>
+                                <td>5500</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Apple hub</td>
+                                <td>5</td>
+                                <td>500</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Apple switch</td>
+                                <td>15</td>
+                                <td>220</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Apple curtion</td>
+                                <td>4</td>
+                                <td>250</td>
+                            </tr>
+                
+                        </table>
+                    </div>
+                    <!--*part 3*-modal footer-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger">Checkout</button>
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Continue Shopping</button>
+                    </div>
+                </div>
+            </div>
+        </div><!--end of the modal-->
+
+
+
+
+        <!--**************************login modal***********************-->
+
+        <div class="modal" id="loginForm">
+            <div class="modal-dialog"><!--pop up in front the screen-like dialog-->
+                <div modal class="modal-content"><!--the content of the modal-message-->
+                    <div class="modal-header">
+                        <h2 class="modal-title">Login form</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <!--body-->
+                    <form action="#" class="was-validated"><!--the body of the login modal-->
+                        <div class="mb-3 mt-3">
+                            <label for="uName" class="form-label">user name:</label>
+                            <input type="text" class="form-control" id="uName" placeholder="please enter user name" name="uname" required>
+
+                            <!--validation to the username div-->
+                            <div class="valid-feedback">user name OK</div>
+                            <div class="invalid-feedback">user name invalid</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="uPass" class="form-label">Password</label>
+                            <input type="password" class="form-control" placeholder="Enter password" name="upass" required>
+
+                            <!--validation to the password div-->
+                            <div class="valid-feedback">password accepted</div>
+                            <div class="invalid-feedback">where is your password?</div>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" name="remember" id="myCheck" required>
+                            <label class="form-check-label">I agree to blala.</label>
+
+                            <!--validation to the checkbox div-->
+                            <div class="valid-feedback">גבר בלי עמוד שדרה</div>
+                            <div class="invalid-feedback">you must agree</div>
+                        </div>
+                    </form>
+                    <!--footer-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger">Forgot password</button>
+                        <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Login</button><!--submit-because sending to the action of the form-->
+                    </div>
+                </div>   
+            </div>
+        </div>
+        <div class="toast show"> <!--alert-->
+            <div class="toast-header">
+                Alert
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body">
+                Vika has left the building....
+            </div>
+        </div>
+
+<!--****************************************************************-->
+
+        <!--3 divs div under div-->         
+        <div class=" p-3 bg-secondary text-white">
+            <div class="p-2 bg-info">flex item 1</div>
+            <div class="p-2 bg-warning">flex item 2</div>
+            <div class="p-2 bg-primary">flex item 3</div>
+        </div>
+
+        <br><hr>
+
+        <div class="d-flex p-3 bg-secondary text-white"><!--div near div-->
+            <div class="p-2 bg-info">flex item 1</div>
+            <div class="p-2 bg-warning">flex item 2</div>
+            <div class="p-2 bg-primary">flex item 3</div>
+        </div>
+
+        <br><hr>
+
+        <div class="d-inline-flex p-3 bg-secondary text-white"><!--inline->הרקע עוטף את הדיבים-->
+            <div class="p-2 bg-info">flex item 1</div>
+            <div class="p-2 bg-warning">flex item 2</div>
+            <div class="p-2 bg-primary">flex item 3</div>
+        </div>
+
+        <br><hr>
+
+        <div class="d-flex flex-row bg-secondary text-white"><!--like a menu->the size of the background is like the buttons-->
+            <div class="p-2 bg-info">flex item 1</div>
+            <div class="p-2 bg-warning">flex item 2</div>
+            <div class="p-2 bg-primary">flex item 3</div>
+        </div>
+
+        <br><hr>
+
+        <div class="d-flex flex-row-reverse bg-secondary text-white"><!--the buttons on the other side-->
+            <div class="p-2 bg-info">flex item 1</div>
+            <div class="p-2 bg-warning">flex item 2</div>
+            <div class="p-2 bg-primary">flex item 3</div>
+        </div>
+
+        <br><hr>
+
+        some flex justify
+
+        <div class="d-flex justify-content-start bg-secondary text-white">
+            <div class="p-2 bg-info">flex item 1</div>
+            <div class="p-2 bg-warning">flex item 2</div>
+            <div class="p-2 bg-primary">flex item 3</div>
+        </div>
+
+        <br><hr>
+
+        <div class="d-flex justify-content-end bg-secondary text-white">
+            <div class="p-2 bg-info">flex item 1</div>
+            <div class="p-2 bg-warning">flex item 2</div>
+            <div class="p-2 bg-primary">flex item 3</div>
+        </div>
+
+        <br><hr>
+
+        <div class="d-flex justify-content-center bg-secondary text-white">
+            <div class="p-2 bg-info">flex item 1</div>
+            <div class="p-2 bg-warning">flex item 2</div>
+            <div class="p-2 bg-primary">flex item 3</div>
+        </div>
+
+        <br><hr>
+
+        <div class="d-flex justify-content-between bg-secondary text-white">
+            <div class="p-2 bg-info">flex item 1</div>
+            <div class="p-2 bg-warning">flex item 2</div>
+            <div class="p-2 bg-primary">flex item 3</div>
+        </div>
+
+        <br><hr>
+
+        <div class="d-flex justify-content-around bg-secondary text-white">
+            <div class="p-2 bg-info">flex item 1</div>
+            <div class="p-2 bg-warning">flex item 2</div>
+            <div class="p-2 bg-primary">flex item 3</div>
+        </div>
+
+        <br><hr>
+
+        <div class="d-flex justify-content-around bg-secondary text-white">
+            <div class="p-2 flex-fill bg-info">flex item 1</div>
+            <div class="p-2 flex-fill bg-warning">flex item 2</div>
+            <div class="p-2 flex-fill bg-primary">flex item 3</div>
+        </div>
+
+        <br><hr>
+
+        <div class="d-flex justify-content-around bg-secondary text-white">
+            <div class="p-2 bg-info">flex item 1</div>
+            <div class="p-2 bg-warning">flex item 2</div>
+            <div class="p-2 bg-primary flex-grow-1">flex item 3</div>
+        </div>
+
+        <br><hr>
+
+        <div class="d-flex justify-content-around bg-secondary text-white">
+            <div class="p-2 flex-fill bg-info order-3">flex item 1</div>
+            <div class="p-2 flex-fill bg-warning order-1">flex item 2</div>
+            <div class="p-2 flex-fill bg-primary order-2">flex item 3</div>
+        </div>
+
+    </div>
+</body>
+</html>

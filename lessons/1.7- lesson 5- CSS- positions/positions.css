@@ -1,0 +1,59 @@
+body,html
+{
+    background-color: rgb(122, 5, 44);
+}
+
+kbd
+{
+    /*
+    background-color: black;
+    color: white;
+    */
+    background-color: #000000;
+    /*color: #ffffff;*/
+    color: rgb(255, 255, 255);
+}
+
+.static
+{
+    position: static;
+    border: 3px solid #73ad21;
+    width: 50vh;
+}
+
+.relative
+{
+    position: relative;
+    width: 50vh;
+    left:30px;
+    top:30px;
+    border: 3px solid #009fff;
+}
+.absolute
+{
+    background-color: aqua;
+    position: absolute;
+    top :50px;
+    right: 300px;
+    width: 200px;
+    height :100px;
+    border: 3px solid #009fff;
+}
+.fixed
+{
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    width:200px;
+    height :20px;
+    border: 3px dashed fuchsia;
+    
+}
+.sticky
+{
+    position: sticky;
+    position: -webkit-sticky; /* safari */
+    top: 0;
+    background-color: green;
+    border: 2px solid #4caf50;
+}

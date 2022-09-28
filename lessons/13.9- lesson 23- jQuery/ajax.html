@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>ajax</title>
+</head>
+<body>
+    <button onclick = "getArray(0)">posts</button>
+    <button onclick = "getArray(1)">comments</button>
+    <button onclick = "getArray(2)">albums</button>
+    <button onclick = "getArray(3)">photos</button>
+    <button onclick = "getArray(4)">todos</button>
+    <button onclick = "getArray(5)">users</button>
+
+    <script>
+
+        var url = '';
+        var array = [];
+
+        var urls = ['posts', 'comments', 'albums', 'photos', 'todos', 'users'];
+        var baseUrl = 'https://jsonplaceholder.typicode.com/';
+
+        function getArray(num)
+        {
+            url = baseUrl + urls[num];
+            getDataFromServer(url);
+        }
+
+        function getDataFromServer(url) //the ajax needs to be in a function to 'delete' the time out of the ajax
+        {
+            $.ajax({ //when we start writing jquery we start with $.ajax, permanent time out and jumps to line 30
+            type: 'GET', 
+            dataType: 'json',
+            url: url, //another way to write: url: 'https://jsonplaceholder.....' (the url of the data)
+
+            success: function(data) //the url and the data exist
+            {
+                array = data;
+                printArray();
+            },
+            error: function(error) //the url and the data does not exist
+            {
+                console.log('error: ', error);
+            }
+            })
+        }
+        function printArray()
+        {
+            console.log(array);
+        }
+
+    </script>
+</body>
+</html>
+

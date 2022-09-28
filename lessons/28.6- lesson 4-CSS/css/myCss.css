@@ -1,0 +1,32 @@
+body /*for body - HTML*/
+{
+    background-color: aquamarine;
+}
+
+.Div1 /* for Div1*/
+{
+    font-size: 20px;
+    font-weight: bold; /*bolding the text*/
+}
+
+#Div2 /* for Div2*/
+{
+    background-color: chartreuse;
+}
+
+.zeevik /* for zeevik*/
+{
+    color: wheat;
+}
+
+.vika /* for vika*/
+{
+    color: green;
+    letter-spacing: 5px; /*space between the laters of the word/sentence*/
+}
+
+div,p /*to divs at the same style*/
+{
+    background-color: azure;
+}
+

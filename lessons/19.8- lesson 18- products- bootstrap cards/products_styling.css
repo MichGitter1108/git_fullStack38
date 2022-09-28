@@ -1,0 +1,21 @@
+.rowDV
+{
+    padding: 20px;
+}
+
+#productsDV
+{
+    background-color: rgba(45,162,253,1);
+}
+
+.card
+{
+    border-radius: 6px;
+    margin-top:10px;
+    border: 1px solid gray;
+    cursor: pointer;
+    -moz-box-shadow: 6px 6px 13px 1px #0a3196; 
+	-webkit-box-shadow: 6px 6px 13px 1px #0a3196; 
+	box-shadow: 6px 6px 13px 1px #0a3196; 
+}
+

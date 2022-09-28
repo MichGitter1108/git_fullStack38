@@ -1,0 +1,81 @@
+/*id one buttons*/
+#one>button:first-child/*the first button of the id 'one'*/
+{
+    background: red;
+}
+
+#one>button:last-child
+{
+    background: green;
+}
+
+#one>button:nth-child(2)
+{
+    background: maroon;
+}
+
+
+/*-------------------------------------------------*/
+/*id two buttons*/
+#two>button:nth-child(odd)/*all the odd buttons*/
+{
+    background: blue;
+
+}
+
+#two>button:nth-child(even)/*all the even buttons*/
+{
+    background:cyan;
+}
+
+/*-------------------------------------------------*/
+/*id three buttons*/
+#three>button:nth-child(3n+1)/*every third first button*/
+{
+    background: yellow;
+}
+
+#three>button:nth-last-child(2)/*the second button from the end*/
+{
+    background: tomato;
+}
+
+
+
+/*-------------------------------------------------*/
+/*id four buttons*/
+
+#four>button:not(:hover) /*when the mouse isn't on the button on this id*/
+{
+    opacity: 0.5;
+}
+
+#four>button:active /*'active'-when clicking*/
+{
+    font-weight: bolder;
+}
+
+/*-------------------------------------------------*/
+/*id five buttons*/
+
+#five>button:not(:hover)/*all the buttons of five*/
+/*when the mouse isn't over all the buttons are red*/
+{
+    border: 1px solid red;
+    
+}
+
+
+
+/*---------------------------------*/
+/*id six buttons- specific buttons names*/
+
+#six>button[name= oren] /*the name 'oren' of the first button*/
+{
+    background: greenyellow;
+}
+
+#six>button[name= ronen] /*the name 'ronen' of the first button*/
+{
+    border: 2px double red; /*double border*/
+}

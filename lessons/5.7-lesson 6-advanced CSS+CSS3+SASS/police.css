@@ -1,0 +1,37 @@
+div
+{
+    width: 500px;
+    height: 500px;
+    background-color: red;
+    position: relative;
+    top: 50px;
+    left:600px;
+}
+
+/*@keyframes policeLight 
+{
+    from{background-color: red;}
+    to{background-color: blue;}
+}
+*/
+
+
+/*animation by percents*/
+@keyframes policeLight /*we choose the name of the animation*/
+{
+    0%{background-color: red;}
+    25%{background-color: blue;}
+    50%{background-color: red;}
+    75%{background-color: blue;}
+    100%{background-color: blue;}
+}
+
+div
+{
+    animation-name: policeLight; /*the name of the animation at @keyframes*/
+    animation-duration: 500ms; /*time of the animation*/
+    animation-iteration-count: 5; /*repeats 5 times*/
+    animation-iteration-count: infinite; /*repeats infinite times*/
+    animation-delay: 5s;
+}
+

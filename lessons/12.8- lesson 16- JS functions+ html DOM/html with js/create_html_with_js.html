@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html with js</title>
+    <link rel="stylesheet" href="background.css">
+</head>
+<body>
+    <script> //inline JS- in the body only
+        var container = ''; //efficiency of the code- instead of creating a new container everytime
+        function printToHtml() //calling a function
+        {
+            container = document.createElement('div'); //create element called div (empty div) - build a html div;
+            container.innerHTML = 'Hello'; //put in a content to the div- in this case- 'hello' (only strings) 
+            container.innerHTML += ' Hello again!'; //add value to the string (always with +=)
+            document.body.appendChild(container); //implements the div to the html body
+            container.innerHTML += '<br>'; //a <br> of html
+            container.innerHTML += '--------------------------------';
+            container.innerHTML += '<br>';
+            container.innerHTML += '<br>'; 
+            container.innerHTML += '<br>'; 
+
+            //create another div that "destroys" the previous div, but the previous div is already saved on the html file//
+            container = document.createElement('div'); 
+            container.innerHTML = 'michal mirchevsky';
+            container.innerHTML += '<br>';
+            container.innerHTML += '<br>';
+            container.innerHTML += '054-7290758';
+            container.innerHTML += '<br>'; 
+            container.innerHTML += '<br>'; 
+            container.innerHTML += 'michalmi118@gmail.com';
+            document.body.appendChild(container); //implements the div to the html body
+        }
+        printToHtml();
+        
+    </script>
+</body>
+</html>
+

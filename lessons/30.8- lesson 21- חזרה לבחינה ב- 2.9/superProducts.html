@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="superProducts.css">
+    <title>supermarket products</title>
+</head>
+<body>
+    <div class="row p-5 justify-content-center mt-1"> <!--centering the div using bootstrap- justify-content-center-->
+        <div class="col-6 formBorder">
+
+            <form id = "formProducts">
+                <div class = "text-center">
+                    <i class="bi bi-envelope-heart" style = "font-size: 25px; color: white;"></i>
+                </div>
+
+                <!--the form title-->
+                <div class = "h3 text-center mb-4">
+                    Enter your product details
+                </div>
+
+                <!--username field-->
+                <div class="mb-4">
+                    <label for="productNameDV" class="form-label">Product name : </label>
+                    <input type="text" class="form-control" id="productNameDV" placeholder = " product name ">
+                </div>
+
+                <!--email field-->
+                <div class="mb-4">
+                    <label for="priceDV" class="form-label">Price : </label>
+                    <input type="number" class="form-control" id="priceDV" placeholder = " enter price ">
+                </div>
+
+                <!--select field-->
+                <div class = "mb-5">
+                    <label for="catagoryDV" class="form-label">product catagory: </label>
+                    <select class="form-select" id = "catagoryDV"> <!--the ID  of the select form must be in the select tag-->
+                        <option value = "1">Milk product</option>
+                        <option value = "2">Drink product</option>
+                        <option value = "3">Cleaning product</option>
+                    </select>
+                </div>
+
+
+                <div class="buttons">
+                    <button type="button" class="btn btn-success ms-1" onclick="onSubmit()">Insert your product</button>
+                </div>
+                <div class = "buttons mt-3">
+                    <button type="button" class="btn btn-info ms-4" onclick="showProducts(1)">show milk products</button>
+                    <button type="button" class="btn btn-info ms-4" onclick="showProducts(2)">show drinks products</button> <!--'ms-4' -> spacing between the buttons-->
+                    <button type = "button" class = "btn btn-info ms-4" onclick ="showProducts(3)">show clean products</button>
+                </div>
+            </form>
+        </div>
+        <div class="row table-responsive">
+            <div class="p-5">
+            <table class="table"> <!--the tag of the table-->
+            <thead> <!--the titles of the table (Users, Name...)-->
+                <tr> <!--a row in the table-->
+                <th>name </th> <!--th font is bold-->
+                <th>price </th>
+                <th>catagory </th>
+                </tr>
+            </thead> <!--until this tag all stays in the html body part and then we use JS code to insert the posts-->
+
+            <tbody id = "tableBody"> <!--what is under the head titles-->
+                
+            </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+
+    <script src = "superProducts.js"></script>
+
+</body>
+</html>

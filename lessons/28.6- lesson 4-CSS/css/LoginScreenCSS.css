@@ -1,0 +1,23 @@
+body
+{
+    direction: rtl; /*right to left*/
+}
+
+input:focus /*the selector 'focus'-> run the style
+commands the input box that you about to write in it */
+{
+    box-shadow: 0 0 5px 5px red;
+    /*shading the "border" of the input, out of the border*/
+
+    background-color: yellow;
+    /*coloring the background of the element*/
+
+    box-shadow: inset 0 0 2px 2px red;
+    /*shading the "border" of the input, in the border, "kills" the
+    first box-shadow*/
+
+    
+
+
+}
+

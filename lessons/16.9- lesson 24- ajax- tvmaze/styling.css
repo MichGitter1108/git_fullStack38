@@ -1,0 +1,14 @@
+.summary
+{
+    height: 140px;
+    width: 180px;
+    overflow: auto;
+    text-align: center;
+}
+
+.name
+{
+    text-align: center;
+    font-weight: bold;
+}
+

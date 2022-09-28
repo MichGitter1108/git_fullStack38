@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Json.js"></script>
+    <link rel="stylesheet" href="styling.css">
+
+</head>
+
+<body>
+    <script>
+
+        console.log(Tasks); //knows the array from the js file
+
+        var mainDIV = '';
+        var hrDIV = '';
+
+        for (var i = 0; i < Tasks.length; i++) {
+            printTitle(Tasks[i].title);
+        }
+
+        function printTitle(task) {
+            mainDIV = document.createElement("div");
+            mainDIV.innerHTML = task;
+            mainDIV.className = 'titleDVCss'; //css class style
+            document.body.appendChild(mainDIV); //document.body- this script must be in the html body, otherwise it won't work
+            createHr();
+        }
+
+        function createHr() //create html hr with a function
+        {
+            hrDIV = document.createElement("hr");
+            hrDIV.className = 'hrDVCss'; //css class style
+            document.body.appendChild(hrDIV);
+        }
+    </script>
+</body>
+
+</html>

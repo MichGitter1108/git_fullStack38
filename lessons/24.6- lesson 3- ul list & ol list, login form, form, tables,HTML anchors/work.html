@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Form</title>
+</head>
+
+<body>
+    <div id="about">
+        <!--one div to personal details-->
+        <center>
+            <!--like text align center-->
+            Work Form<br><br>
+            <a href="#about">about me</a>
+            <!--html anchor-->
+            <a href="#job">offer a job</a>
+            <!--html anchor-->
+            <hr />
+        </center>
+        <img src="media/developer.jpg" alt="developer photo" height="100px" width="100px" />
+        <br>
+        Name: Michal Mirchevsky<br>
+        id: 123456789<br>
+        tel: 054-729-7580<br>
+        <hr />
+        Education:
+        <ul>
+            <li>High School</li>
+            <li>Open University</li>
+            <li>John Bryce</li>
+        </ul>
+        <hr />
+        Work Experience:
+        <ol>
+            <li>Primatic</li>
+            <li>Tel Hai</li>
+            <li>John Bryce</li>
+        </ol>
+
+        <hr>
+    </div>
+
+    <div id="job">
+        <!--another div to the job info-->
+        <form action="">
+            <!--without "form" tag the reset tag doesn't work-->
+            <input type="text" placeholder="Company Name.." />
+            <fieldset>
+                <legend>Work area:</legend>
+                <!--checkboxes-->
+                <input type="checkbox">North
+                <input type="checkbox">Center
+                <input type="checkbox">Tel Aviv
+                <input type="checkbox">South
+                <input type="checkbox">Eilat
+                <input type="checkbox">offshore
+
+
+            </fieldset>
+            <fieldset>
+                <legend>Salary:</legend>
+                <!--when the items are in the same group can be only chosen one option-->
+                <input type="radio" name="Salary">10,000-15,000
+                <input type="radio" name="Salary">15,000-25,000
+                <input type="radio" name="Salary">25,000-35,000
+                <input type="radio" name="Salary">35,000-north
+            </fieldset>
+
+            About the company:<br>
+            <textarea rows="5" cols="80"></textarea>
+            <hr>
+
+            <input type="tel" placeholder="Telephone number" />
+
+
+            Company phone number:
+            <input type="tel" placeholder="Telephone number" />
+
+            Contact Person:
+            <input type="text" placeholder="Contact Person (hr)" />
+
+            <hr>
+            <input type="submit" value="submit" />
+            <input type="reset" value="reset" />
+
+            <br>
+
+            <a href="#about">move to top</a>
+            <!--html anchor to the specific div-->
+
+
+        </form>
+    </div>
+
+</body>
+
+</html>

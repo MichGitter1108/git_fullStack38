@@ -1,0 +1,105 @@
+body, html
+{
+    /*perfect css image background*/
+    background: url(backgroundImage.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.formBorder 
+{
+    background: rgba(238, 160, 87, 0.6);
+    border: 3px solid white;
+    border-radius: 5px;
+    padding: 30px;
+}
+
+.buttons
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-right: 1rem;
+}
+
+.h3
+{
+    color: white;
+    text-shadow: 2px 2px 0 #000000, 3px 3px 0 #000000;
+    font-weight: bold;
+}
+
+.form-label
+{
+    color: white;
+    text-shadow: 2px 2px 0 #000000, 3px 3px 0 #000000;
+    font-weight: bold;
+}
+
+.form-control
+{
+    opacity: 0.8;
+}
+
+.usersContainer
+{
+    border: 2px solid black;
+}
+
+
+.userCl
+{
+    border: 2px solid black;
+    background: rgba(180, 230, 116, 0.61);
+    border-radius: 10px;
+}
+
+.title
+{
+    color: white;
+    text-shadow: 2px 2px 0 #000000, 3px 3px 0 #000000;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.form-select
+{
+    opacity: 0.8;
+}
+
+.table
+{
+    border: 3px solid white;
+    border-radius: 5px;
+    background: rgba(238, 160, 87, 0.6);
+}
+
+.headTitle
+{
+    color: white;
+    text-shadow: 2px 2px 0 #000000, 3px 3px 0 #000000;
+    font-weight: bold;
+}
+
+td
+{
+    color: white;
+}
+
+.singleUser
+{
+    border: 1px solid white;
+}
+
+.user
+{
+    margin: auto;
+    background: rgba(238, 160, 87, 0.6);
+    width: 200px;
+    border: 3px solid white;
+    border-radius: 5px;
+    padding: 10px;
+}
+
