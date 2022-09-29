@@ -24,11 +24,11 @@ function showsAjax()
     })
 }
 
-function printShowsToHTML(showsArray)
+function printShowsToHTML(array)
 {
-    for ( var i = 0; i < showsArray.length; i++ )
+    for ( var i = 0; i < array.length; i++ )
     {
-        printSingleShowToHTML(showsArray[i]);
+        printSingleShowToHTML(array[i]);
     }
 }
 
@@ -74,7 +74,7 @@ function onSubmit(value)
         success: function (data) 
         {
             shows = data;
-            printShowsToHTML(shows);
+            printInputShows(shows);
         },
 
         error: function (error) 
@@ -84,4 +84,10 @@ function onSubmit(value)
     })
 }
 
-
+function printInputShows(showsArray)
+{
+    for ( var i = 0; i < showsArray.length; i++ )
+    {
+        printSingleShowToHTML(showsArray[i]);
+    }
+}
