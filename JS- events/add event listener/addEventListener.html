@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1>The Element Object</h1>
+    <h2>The addEventListener() Method</h2>
+
+    <p>Execute a function when a user clicks on a button:</p>
+
+    <button id="myBtn">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+        const element = document.getElementById("myBtn"); //a button element to active the function on it
+
+        //                         *         **
+        element.addEventListener("click", myFunction);
+        // * --> "click" - the event we want the function to be called of (click, mousemove... the full list at w3schools)
+        // ** --> "myFunction()" - the function we want to be called 
+
+        function myFunction() 
+        {
+            document.getElementById("demo").innerHTML = "Hello World";
+        }
+    </script>
+
+</body>
+</html>
+
