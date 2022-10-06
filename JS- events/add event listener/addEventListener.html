@@ -12,7 +12,8 @@
     <p id="demo"></p>
 
     <script>
-        const element = document.getElementById("myBtn"); //a button element to active the function on it
+        var p = document.getElementById("demo");
+        var element = document.getElementById("myBtn"); //a button element to active the function on it
 
         //                         *         **
         element.addEventListener("click", myFunction);
@@ -21,7 +22,7 @@
 
         function myFunction() 
         {
-            document.getElementById("demo").innerHTML = "Hello World";
+            p.innerHTML = "Hello World";
         }
     </script>
 
