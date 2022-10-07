@@ -83,6 +83,7 @@ let postsArray = posts.map(post =>
     {
         return post.id; //doing the command of postsArray.push(p.id)
     }
+    return null;
     //if the js not entering to the if block then returned undefined at the array and console log
     //if we do for example: return 1 the array will be with numbers of 1
 })
@@ -157,3 +158,19 @@ let autPostsFilter = posts.filter((post) => //filter the posts json array
 
 console.log(autPostsFilter);
 
+//-exercise-//
+
+let parametersFunction = (titleStartWith, bodyEndWith, id) => //arrow function
+{
+    let postsFilter = posts.filter(post => { //filter function
+        if ( post.title.startsWith(titleStartWith) || post.body.endsWith(bodyEndWith) || post.id == id)
+        {
+            return post;
+        }
+    })
+    return postsFilter; //we use return because after that we can use the array for different functions
+}
+
+let array = parametersFunction("c", ".", 45); 
+
+console.log("array: ", array);
