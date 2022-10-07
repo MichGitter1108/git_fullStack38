@@ -16,7 +16,7 @@ if ( num2 > 8 )
     console.log( num3 );
 }
 
-console.log( num3 ); // --> num3 is not defined
+//console.log( num3 ); // --> num3 is not defined
 
 
 //-----------------------------------------------------//
@@ -65,9 +65,95 @@ let function2 = (number2) =>
 let number3 = 50;
 let function3 = (number3 = 100) => //100 is the default variable value if we not pass some parameter value (line 72)
 {
-    console.log("Hello function 2: ",number3);
+    console.log("Hello function 3: ",number3);
 }
 
 function3(number3);
 function3(); //--> if we not pass a parameter- the default value is 100 because of line 66
+
+
+
+
+//-------------------------------------------------------------------------------------------//
+//_map filter_- a short of the *original for* loop- the most relevant function
+
+let postsArray = posts.map(post => 
+{
+    if ( post.id <= 30 && post.id >= 20 )
+    {
+        return post.id; //doing the command of postsArray.push(p.id)
+    }
+    //if the js not entering to the if block then returned undefined at the array and console log
+    //if we do for example: return 1 the array will be with numbers of 1
+})
+
+console.log("map: ", postsArray);
+
+
+//----------------------------------//
+//how to solve that?- _filter method_
+
+let postFilter = posts.filter((post, i) => //the second parameter is always the index
+{
+    if ( post.id <= 30 && post.id >= 20 )
+    {
+        post.index = i; //adding index key to the object
+        return post;
+    }
+})
+
+console.log("filter: ", postFilter);
+
+
+//---------------------------------//
+//_find method_- specific array object
+let postsFind = posts.find( post =>{
+    return (post.id == 20 || post.id == 30); //only the first post he finds according to the if condition and ends the function
+})
+
+console.log("find: ", postsFind);
+
+//---------------------------------//
+//_findIndex_
+let postsFindIndex = posts.findIndex( post =>{
+    return (post.id == 20 || post.id == 30); //only the first post he finds according to the if condition and ends the function
+})
+
+console.log("find index: ", postsFindIndex);
+
+
+
+
+//----------------------string functions--------------------------------------//
+let string = "abcdefghijklmnopqrstuvwxyz";
+
+if ( string[0] == "a" && string[1] == "b" )
+{
+    console.log(true);
+}
+else
+{
+    console.log(false);
+}
+
+let startResult = string.startsWith("abc"); //startsWith is a function that return true or false
+console.log(startResult);
+
+let includeResult = string.includes("abc"); //includes is a function that return true or false
+console.log(includeResult);
+
+let endResult = string.endsWith("xyz"); //endsWith is a function that return true or false
+console.log(endResult);
+
+
+//-exercise-//
+let autPostsFilter = posts.filter((post) => //filter the posts json array
+{
+    if ( post.body.includes("aut") )
+    {
+        return post;
+    }
+})
+
+console.log(autPostsFilter);
 
