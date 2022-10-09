@@ -158,6 +158,8 @@ let autPostsFilter = posts.filter((post) => //filter the posts json array
 
 console.log(autPostsFilter);
 
+
+
 //-exercise-//
 
 let parametersFunction = (titleStartWith, bodyEndWith, id) => //arrow function
@@ -174,3 +176,19 @@ let parametersFunction = (titleStartWith, bodyEndWith, id) => //arrow function
 let array = parametersFunction("c", ".", 45); 
 
 console.log("array: ", array);
+
+
+
+//-exercise-//
+
+let booleanPosts = posts.map( post => 
+{
+    if ( post.id == 8 )
+    {
+        return true;
+    }
+    return false;
+})
+
+console.log("boolean: ", booleanPosts);
+
