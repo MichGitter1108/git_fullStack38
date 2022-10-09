@@ -65,11 +65,16 @@ function onSubmit(value)
 {
     container.innerHTML = '';
 
+    var originalURL = 'https://api.tvmaze.com/search/shows?q=';
+    var searchValue = value;
+
+    var searchResult = originalURL + searchValue;
+
     $.ajax(
     {
         type: 'GET',
         datatype: 'json',
-        url: 'https://api.tvmaze.com/search/shows?q=' + value,
+        url: searchResult,
 
         success: function (data) 
         {
