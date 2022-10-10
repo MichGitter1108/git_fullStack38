@@ -33,7 +33,7 @@ function printSingleShowToHTML(show)
     var single = '';
     single += '<div class="mt-2 col-xl-3 col-lg-4 col-md-6 col-sm-12">';
     single += '<div class="card mb-2" style="width: 13rem;">';
-    single += `<img src="${show.image.medium}" class="card-img-top" alt="..."></img>`;
+    single += `<img src="${show.image.medium}" class="card-img-top" alt="...">`;
     single += '<div class="card-body">';
         single += `<h5 class="name">${show.name}</h5>`;
         single += `<p class="type">${show.type}</p>`;
@@ -44,7 +44,7 @@ function printSingleShowToHTML(show)
         single += '<div class = "text-center">';
 
             //--a button that sends us to another page (a href) with the specific show according to the id--//
-            single += `<a href = "showDetails.html?id=${show.id}" target = "_blank"><button type = "button" class = "mt-2 btn btn-info" onclick = "anotherPage()">More Details</button></a>`;
+            single += `<a href = "showDetailsID.html?id=${show.id}" target = "_blank"><button type = "button" class = "mt-2 btn btn-info">More Details</button></a>`;
 
         single += '</div>';
     single += `</div>`;
