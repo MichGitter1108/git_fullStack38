@@ -2,6 +2,26 @@ var shows = [];
 
 var container = document.getElementById('showsDV');
 
+function showsAjax() //show all the shows when refresh
+{
+    container.innerHTML = '';
+
+    $.ajax({
+        type: 'GET',
+        dataType: 'json',
+        url: 'https://api.tvmaze.com/shows',
+
+        success: function (data) {
+            shows = data;
+            console.log(shows);
+            printShowsToHTML(shows);
+        },
+        error: function (error) {
+            console.log('error: ', error);
+        }
+    })
+}
+
 
 function onSubmit(value) //when click th search button
 {
@@ -29,36 +49,8 @@ function onSubmit(value) //when click th search button
         })
 }
 
-
-
-function showsAjax() //show all the shows when refresh
+function printSingleShowToHTML(show) //printing show card
 {
-    container.innerHTML = '';
-
-    $.ajax({
-        type: 'GET',
-        dataType: 'json',
-        url: 'https://api.tvmaze.com/shows',
-
-        success: function (data) {
-            shows = data;
-            console.log(shows);
-            printShowsToHTML(shows);
-        },
-        error: function (error) {
-            console.log('error: ', error);
-        }
-    })
-}
-
-function printShowsToHTML(array) {
-    for (var i = 0; i < array.length; i++) {
-        printSingleShowToHTML(array[i]);
-    }
-}
-
-
-function printSingleShowToHTML(show) {
     console.log(show);
     var singleShow = '';
     singleShow += '<div class="mt-2 col-xl-2 col-lg-4 col-md-5 col-sm-12">';
@@ -84,8 +76,20 @@ function printSingleShowToHTML(show) {
     container.innerHTML += singleShow;
 }
 
-function printInputShows(showsArray) {
-    for (var i = 0; i < showsArray.length; i++) {
+
+function printShowsToHTML(array) //called from the ajax function
+{
+    for (var i = 0; i < array.length; i++) 
+    {
+        printSingleShowToHTML(array[i]);
+    }
+}
+
+
+function printInputShows(showsArray) //that function calls for the function that prints shows cards of the input search
+{
+    for (var i = 0; i < showsArray.length; i++) 
+    {
         console.log("input array: ", showsArray);
         printSingleShowToHTML(showsArray[i]);
     }

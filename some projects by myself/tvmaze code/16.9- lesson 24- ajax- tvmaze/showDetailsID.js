@@ -30,6 +30,7 @@ $.ajax ({
 
 function printSingleShowToHTML(show)
 {
+    console.log(show);
     var single = '';
     single += '<div class="mt-2 col-xl-3 col-lg-4 col-md-6 col-sm-12">';
     single += '<div class="card mb-2" style="width: 13rem;">';
