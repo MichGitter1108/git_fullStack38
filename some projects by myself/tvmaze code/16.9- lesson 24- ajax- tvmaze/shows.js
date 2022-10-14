@@ -98,7 +98,6 @@ function printInputShows(showsArray) //that function calls for the function that
         printSingleShowFromInputToHTML(showsArray[i]);
     }
 }
-
 function printSingleShowFromInputToHTML(singleInputShow)
 {
     var singleShow = '';
