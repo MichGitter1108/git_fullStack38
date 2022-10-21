@@ -7,6 +7,7 @@ let albumsArray = [];
 
 let showAllAlbumsAjax = () => //*ajax function written as arrow function! show all albums
 {
+    localStorage.clear();
     albumsContainer.innerHTML = '';
 
     $.ajax(
@@ -46,7 +47,7 @@ let printSingleAlbumToHTML = (album) =>
     sAlbum += `<p class = "card-text"> <span style = "text-decoration: underline;"> id:</span> ${album.id}</p>`;
     //div of the button
     sAlbum += '<div class="text-center">'; 
-    sAlbum += '<button type= "button" class = "btn btn-info p-2">Click me!</button>';
+    sAlbum += `<button type= "button" onclick = "singleAlbumDetailNewWindow('${album}')" class = "btn btn-info p-2">Click me!</button>`;
     sAlbum += '</div>';
     sAlbum += '</div>';
     sAlbum += '</div>';
@@ -88,5 +89,14 @@ let displayInputAlbums = (someTitleValue) =>
             printSingleAlbumToHTML(filteredAlbum);
         }
     }
+}
+
+//- - - - - - - - - - - - - - - - - - - - - - -//
+//function to single album display//
+let singleAlbumDetailNewWindow = (singleOneAlbum) =>
+{
+    localStorage.clear();
+    localStorage.setItem('singleOneAlbum', JSON.stringify(singleOneAlbum));
+    window.open("singleAlbumDetails.html");
 }
 
