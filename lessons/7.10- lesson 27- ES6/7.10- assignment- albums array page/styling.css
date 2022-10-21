@@ -1,0 +1,24 @@
+html, body
+{
+    background: url(background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.card
+{
+    background-color: bisque;
+    -moz-box-shadow: -4px -2px 10px 1px #333333; 
+	-webkit-box-shadow: -4px -2px 10px 1px #333333; 
+	box-shadow: -4px -2px 10px 1px #333333;
+}
+
+.card-title
+{
+    height: 100px;
+    width: 180px;
+    overflow: auto;
+    text-align: center;
+}

@@ -11,12 +11,14 @@ function showsAjax() //show all the shows when refresh
         dataType: 'json',
         url: 'https://api.tvmaze.com/shows',
 
-        success: function (data) {
+        success: function (data) 
+        {
             shows = data;
             console.log(shows);
             printShowsToHTML(shows);
         },
-        error: function (error) {
+        error: function (error) 
+        {
             console.log('error: ', error);
         }
     })
@@ -52,8 +54,7 @@ function printSingleShowToHTML(show) //printing show card
 
 function printShowsToHTML(array) //called from the ajax function
 {
-    for (var i = 0; i < array.length; i++) 
-    {
+    for (var i = 0; i < array.length; i++) {
         printSingleShowToHTML(array[i]);
     }
 }
@@ -93,12 +94,13 @@ function onSubmit(value) //when click the search button
 function printInputShows(showsArray) //that function calls for the function that prints shows cards of the input search
 {
     console.log("data input array: ", showsArray);
-    for (var i = 0; i < showsArray.length; i++) 
-    {
+    for (var i = 0; i < showsArray.length; i++) {
         printSingleShowFromInputToHTML(showsArray[i]);
     }
 }
-function printSingleShowFromInputToHTML(singleInputShow)
+
+
+function printSingleShowFromInputToHTML(singleInputShow) 
 {
     var singleShow = '';
     singleShow += '<div class="mt-2 col-xl-2 col-lg-4 col-md-5 col-sm-12">';
