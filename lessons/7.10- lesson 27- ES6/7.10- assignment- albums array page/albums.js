@@ -70,7 +70,7 @@ let displayInputAlbums = (someTitleValue) => {
 
     console.log("filtered titles array: ", albumFilterArray);
 
-    if (albumFilterArray.length == null) 
+    if (!albumFilterArray.length) 
     {
         alert("No results found..!");
     }
