@@ -15,10 +15,10 @@ var get = JSON.parse(localStorage.getItem('names'));
 
 //--remove the array from the local storage--//
 //                         *
-localStorage.removeItem('names');
+//localStorage.removeItem('names');
 // * --> 'names'- the key name of the object/element as in the local storage
 
 
 //--remove all the elements from the local storage--//
-localStorage.clear();
+//localStorage.clear();
 
