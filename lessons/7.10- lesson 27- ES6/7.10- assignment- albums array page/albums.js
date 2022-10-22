@@ -5,7 +5,7 @@ let albumsArray = [];
 
 //-print all the albums from the json array-//
 
-let showAllAlbumsAjax = () => //*ajax function written as arrow function! show all albums
+let showAllAlbumsAjax = () => //* ajax function written as arrow function! show all albums
 {
     localStorage.clear();
     albumsContainer.innerHTML = '';
@@ -82,14 +82,17 @@ let displayInputAlbums = (someTitleValue) => {
 
 //- - - - - - - - - - - - - - - - - - - - - - -//
 //function to single album display//
-let singleAlbumDetailNewWindow = (title, id) => {
+let singleAlbumDetailNewWindow = (title, id) => 
+{
     localStorage.clear();
-    saveDataToLocalStorage('singleOneAlbumTitle', title);
+    saveDataToLocalStorage('singleOneAlbumTitle', title); //? ask at lesson -even when the parameter is already a string/number, we must do stringify or not?
     saveDataToLocalStorage('singleOneAlbumId', id);
     window.open("singleAlbumDetails.html");
 }
 
 //external function for setItem to LS
-let saveDataToLocalStorage = (key, value) => {
+let saveDataToLocalStorage = (key, value) => 
+{
     localStorage.setItem(key, JSON.stringify(value));
 }
+
