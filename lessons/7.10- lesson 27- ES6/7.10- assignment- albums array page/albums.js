@@ -74,8 +74,10 @@ let displayInputAlbums = (someTitleValue) => {
     {
         alert("No results found..!");
     }
-    else {
-        for (let filteredAlbum of albumFilterArray) {
+    else 
+    {
+        for (let filteredAlbum of albumFilterArray) 
+        {
             printSingleAlbumToHTML(filteredAlbum);
         }
     }
