@@ -1,4 +1,7 @@
-class car //* class + 'name of the class'
+let id = 1;
+let CarsArray = [];
+
+class Car //* class + 'name of the class'
 {
     doors = ''; //*one parameter of the object
     engine = '';
@@ -30,5 +33,12 @@ class car //* class + 'name of the class'
     }
 }
 
+function submitCar() //*adding new car object with the input values and push into the cars array
+{
+    let newCar = new Car(id, companyId.value, yearId.value, priceId.value);
+    CarsArray.push(newCar);
+    console.log(CarsArray);
 
+    id++;
+}
 
