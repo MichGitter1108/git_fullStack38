@@ -33,5 +33,30 @@
 
         </form>
     </div>
+
+    <div class = "row p-2" style = "justify-content: center;">
+        <form class = "col-6 ms-3">
+
+            <div class="mb-3">
+                <label for="id" class="form-label">ID</label>
+                <input type="text" class="form-control" id="IDinput">
+            </div>
+
+            <div class="mb-3">
+                <label for="date" class="form-label">Date</label>
+                <input type="text" class="form-control" id="dateId">
+            </div>
+
+            <div class="mb-3">
+                <label for="km" class="form-label">Km</label>
+                <input type="number" class="form-control" id="kmId">
+            </div>
+
+            <div class = "text-center">
+                <button onclick = "AddServiceToCar(ID.value, dateId.value, kmId.value)" type="submit" class="btn btn-warning">find car</button>
+            </div>
+
+        </form>
+    </div>
 </body>
 </html>
