@@ -1,62 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src = "cars.js"></script>
-    <title>Cars adding to class </title>
-</head>
-<body>
-    <div class = "row p-2" style = "justify-content: center;">
-        <form class = "col-6 ms-3">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script src="cars.js"></script>
+    <title>Cars adding to class</title>
+  </head>
+  <body>
+    <div class="row p-2" style="justify-content: center">
+      <form class="col-6 ms-3">
+        <div class="mb-3">
+          <label for="company" class="form-label">company</label>
+          <input type="text" class="form-control" id="companyId" />
+        </div>
 
-            <div class="mb-3">
-                <label for="company" class="form-label">company</label>
-                <input type="text" class="form-control" id="companyId">
-            </div>
+        <div class="mb-3">
+          <label for="year" class="form-label">Year</label>
+          <input type="number" class="form-control" id="yearId" />
+        </div>
 
-            <div class="mb-3">
-                <label for="year" class="form-label">Year</label>
-                <input type="number" class="form-control" id="yearId">
-            </div>
+        <div class="mb-3">
+          <label for="price" class="form-label">Price</label>
+          <input type="number" class="form-control" id="priceId" />
+        </div>
 
-            <div class="mb-3">
-                <label for="price" class="form-label">Price</label>
-                <input type="number" class="form-control" id="priceId">
-            </div>
-
-            <div class = "text-center">
-                <button onclick = "submitCar()" type="submit" class="btn btn-warning">Submit</button>
-            </div>
-
-        </form>
+        <div class="text-center">
+          <button onclick="submitCar()" type="submit" class="btn btn-warning">
+            Submit
+          </button>
+        </div>
+      </form>
     </div>
 
-    <div class = "row p-2" style = "justify-content: center;">
-        <form class = "col-6 ms-3">
+    <div class="row p-2" style="justify-content: center">
+      <form class="col-6 ms-3">
+        <div class="mb-3">
+          <label for="id" class="form-label">ID</label>
+          <input type="text" class="form-control" id="IDinput" />
+        </div>
 
-            <div class="mb-3">
-                <label for="id" class="form-label">ID</label>
-                <input type="text" class="form-control" id="IDinput">
-            </div>
+        <div class="mb-3">
+          <label for="date" class="form-label">Date</label>
+          <input type="text" class="form-control" id="dateId" />
+        </div>
 
-            <div class="mb-3">
-                <label for="date" class="form-label">Date</label>
-                <input type="text" class="form-control" id="dateId">
-            </div>
+        <div class="mb-3">
+          <label for="km" class="form-label">Km</label>
+          <input type="number" class="form-control" id="kmId" />
+        </div>
 
-            <div class="mb-3">
-                <label for="km" class="form-label">Km</label>
-                <input type="number" class="form-control" id="kmId">
-            </div>
-
-            <div class = "text-center">
-                <button onclick = "AddServiceToCar(ID.value, dateId.value, kmId.value)" type="submit" class="btn btn-warning">find car</button>
-            </div>
-
-        </form>
+        <div class="text-center">
+          <button
+            onclick="AddServiceToCar(ID.value, dateId.value, kmId.value)"
+            type="submit"
+            class="btn btn-warning"
+          >
+            find car
+          </button>
+        </div>
+      </form>
     </div>
-</body>
+  </body>
 </html>

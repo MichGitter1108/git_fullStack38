@@ -30,7 +30,11 @@ class Car
 
 function submitCar()
 {
-    
+    console.log(id, companyId.value, yearId.value, priceId.value);
+    let car = new Car(id, companyId.value, yearId.value, priceId.value);
+    CarsArray.push(car);
+    id++;
+    console.log(CarsArray);
 }
 
 
@@ -47,4 +51,3 @@ function addServiceToCar()
 
     console.log(CarsArray);
 }
-
