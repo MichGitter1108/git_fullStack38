@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+    crossorigin="anonymous"
+    />
+    <script src="studentsTests.js"></script>
+    <title>students tests</title>
+</head>
+<body>
+    <div class="row p-2" style="justify-content: center">
+        <form class="col-6 ms-3">
+            <div class="mb-3">
+                <label for="name" class="form-label">student's name: </label>
+                <input type="text" class="form-control" id="name" />
+                </div>
+
+                <div class="mb-3">
+                <label for="test" class="form-label">Test: </label>
+                <input type="text" class="form-control" id="test" />
+                </div>
+
+                <div class="mb-3">
+                <label for="grade" class="form-label">grade: </label>
+                <input type="number" class="form-control" id="grade"/>
+                </div>
+
+                <div class="text-center">
+                <button onclick="submitTest(name.value, test.value, grade.value)" type="submit" class="btn btn-info">
+                    Submit test
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
