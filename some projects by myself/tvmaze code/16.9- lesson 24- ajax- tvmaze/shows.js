@@ -6,7 +6,8 @@ function showsAjax() //show all the shows when refresh
 {
     container.innerHTML = '';
 
-    $.ajax({
+    $.ajax(
+    {
         type: 'GET',
         dataType: 'json',
         url: 'https://api.tvmaze.com/shows',
@@ -41,7 +42,7 @@ function printSingleShowToHTML(show) //printing show card
     singleShow += '<div class = "text-center">';
 
     //--a button that sends us to another page (a href) with the specific show according to the id--//
-    singleShow += `<a href = "showDetailsID.html?id=${show.id}" target = "_blank"><button type = "button" class = "mt-2 btn btn-info">More Details</button></a>`;
+    singleShow += `<button onclick = "singleShowInfoDIV(${show.id})" type = "button" class = "mt-2 btn btn-info">More Details</button>`;
 
     singleShow += '</div>';
     singleShow += `</div>`;
@@ -54,7 +55,8 @@ function printSingleShowToHTML(show) //printing show card
 
 function printShowsToHTML(array) //called from the ajax function
 {
-    for (var i = 0; i < array.length; i++) {
+    for (var i = 0; i < array.length; i++) 
+    {
         printSingleShowToHTML(array[i]);
     }
 }
@@ -80,12 +82,14 @@ function onSubmit(value) //when click the search button
         datatype: 'json',
         url: searchResult,
 
-        success: function (data) {
+        success: function (data) 
+        {
             shows = data;
             printInputShows(shows);
         },
 
-        error: function (error) {
+        error: function (error) 
+        {
             console.log('error : ', error);
         },
     })
@@ -94,7 +98,8 @@ function onSubmit(value) //when click the search button
 function printInputShows(showsArray) //that function calls for the function that prints shows cards of the input search
 {
     console.log("data input array: ", showsArray);
-    for (var i = 0; i < showsArray.length; i++) {
+    for (var i = 0; i < showsArray.length; i++) 
+    {
         printSingleShowFromInputToHTML(showsArray[i]);
     }
 }
@@ -116,7 +121,7 @@ function printSingleShowFromInputToHTML(singleInputShow)
     singleShow += '<div class = "text-center">';
 
     //--a button that sends us to another page (a href) with the specific show according to the id--//
-    singleShow += `<a href = "showDetailsID.html?id=${singleInputShow.show.id}" target = "_blank"><button type = "button" class = "mt-2 btn btn-info">More Details</button></a>`;
+    singleShow += `<button onclick = "singleShowInfoDIV(${singleInputShow.show.id})" type = "button" class = "mt-2 btn btn-info">More Details</button>`;
 
     singleShow += '</div>';
     singleShow += `</div>`;
@@ -125,3 +130,52 @@ function printSingleShowFromInputToHTML(singleInputShow)
 
     container.innerHTML += singleShow;
 }
+
+
+
+
+
+//*- - - - - - - - - - - - showing single show in a div at the same page- - - - - - - - - - - - - - - - - - - - -//
+
+var singleShowInfoDV = document.getElementById('singleShowInformation'); //the div of the single show DV
+let baseURL = 'https://api.tvmaze.com/shows/';
+function singleShowInfoDIV(singleID)
+{
+    var singleShowURLandID = baseURL + singleID; //combine the shows URL with an id (tvmaze according to specific id API)
+    var singleShowForInfo = {}; //global object for saving
+
+    $.ajax( //ajax for getting the specific url with the id of the single show information
+    {
+        type: 'GET', 
+        dataType: 'json',
+        url: singleShowURLandID, 
+    
+        success: function(data) 
+        {
+            singleShowForInfo = data; //saving for the variable because 'data' is only for the ajax function
+            printSingleShowInfoInADivToHTML(singleShowForInfo); 
+        },
+        error: function(error) 
+        {
+            console.log('error: ', error);
+        }
+    })
+}
+
+function printSingleShowInfoInADivToHTML(singleShowOfAnID) //function of printing the specific show
+{
+    console.log(singleShowOfAnID);
+
+    singleShowInfoDV.innerHTML = '';
+
+    var single = '';
+
+    single += '<div style = "width: 30%; float: left;" class = "imgDV">';
+    single += `<img src="${singleShowOfAnID.image.medium}" class="card-img-top" alt="...">`;
+    single += '</div>';
+
+    single += 'hello';
+
+    singleShowInfoDV.innerHTML += single;
+}
+

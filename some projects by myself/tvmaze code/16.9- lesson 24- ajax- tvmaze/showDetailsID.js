@@ -12,7 +12,8 @@ var singleContainer = document.getElementById('singleShowContainer');
 var singleShowURL = 'https://api.tvmaze.com/shows/' + singleShowID; //combine the shows URL with an id (tvmaze according to specific id API)
 var singleShow = {}; //global object for saving
 
-$.ajax ({
+$.ajax (
+{
     type: 'GET', 
     dataType: 'json',
     url: singleShowURL, 
