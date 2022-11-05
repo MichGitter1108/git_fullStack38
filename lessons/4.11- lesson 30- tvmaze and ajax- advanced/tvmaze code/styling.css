@@ -23,11 +23,23 @@ html, body
 
 .imgDV img
 {
-    width: 100px;
+    height: 350px;
+    width: 250px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
 }
 
 .infoContainer
 {
     flex-direction: row;
+    background: rgba(242, 246, 245, 0.4);
+    height: 550px;
+    width: 100%;
+}
+
+#description
+{
+    margin-top: 20px;
 }
 

@@ -170,11 +170,31 @@ function printSingleShowInfoInADivToHTML(singleShowOfAnID) //function of printin
 
     var single = '';
 
-    single += '<div style = "width: 30%; float: left;" class = "imgDV">';
+    single += '<div class = "text-center">';
+
+    //*div of the image
+    single += '<div style = "width: 50%; float: right;" class = "imgDV">';
     single += `<img src="${singleShowOfAnID.image.medium}" class="card-img-top" alt="...">`;
     single += '</div>';
 
-    single += 'hello';
+
+    //*div of the tv show name
+    single += '<div class = "text-center">';
+    single += `<h1>${singleShowOfAnID.name}</h1>`;
+    single += '</div>';
+
+
+    //*div of the description
+    single += '<div id = "description" class = "text-center">';
+    single += `<h5><span style = "text-decoration: underline;">Type:</span> ${singleShowOfAnID.type}</h5>`;
+    single += `<h5><span style = "text-decoration: underline;">Language:</span> ${singleShowOfAnID.language}</h5>`;
+    single += '</div>';
+
+    single += '<div id = "summary" class = "text-center">';
+    single += `<p>${singleShowOfAnID.summary}</p>`;
+    single += '</div>';
+
+    single += '</div>';
 
     singleShowInfoDV.innerHTML += single;
 }
