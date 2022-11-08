@@ -1,34 +1,59 @@
-var shows = [];
+let singleShowInfoDV = document.getElementById('singleShowInformation'); //the div of the single show DV
+let baseTVmazeURL = 'http://api.tvmaze.com/shows';
+let shows = [];
 
-var container = document.getElementById('showsDV');
+let container = document.getElementById('showsDV');
 
-function showsAjax() //show all the shows when refresh
+//- - - - - - - - - - - - - - - - - - - - - - - -//
+//*display all the shows when refresh: 
+function showsAjax(_function, id = 0, value = '') //id = 0 --> default id value
 {
     container.innerHTML = '';
 
-    $.ajax(
-    {
-        type: 'GET',
-        dataType: 'json',
-        url: 'https://api.tvmaze.com/shows',
+    let theURL = '';
 
-        success: function (data) 
+    if (id == 0) {
+        theURL = baseTVmazeURL;
+    }
+
+    if (id != 0) {
+        theURL = baseTVmazeURL + '/' + id;
+    }
+
+    if (value == '') {
+        theURL = baseTVmazeURL;
+    }
+
+    else {
+        theURL = baseTVmazeURL + '?q=' + value;
+    }
+
+    $.ajax(
         {
-            shows = data;
-            console.log(shows);
-            printShowsToHTML(shows);
-        },
-        error: function (error) 
-        {
-            console.log('error: ', error);
-        }
-    })
+            type: 'GET',
+            datatype: 'json',
+            url: theURL,
+            success: function (data) {
+                console.log(data);
+                _function(data);
+            },
+            error: function (error) {
+                console.log('error : ', error);
+            },
+        })
+}
+
+function printShowsToHTML(allShowsArray) //called from the ajax function
+{
+    for (let i = 0; i < allShowsArray.length; i++) {
+        printSingleShowToHTML(allShowsArray[i]);
+    }
 }
 
 function printSingleShowToHTML(show) //printing show card
 {
     console.log(show);
-    var singleShow = '';
+    let singleShow = '';
     singleShow += '<div class="mt-2 col-xl-2 col-lg-4 col-md-5 col-sm-12">';
     singleShow += '<div class="card mb-2" style="width: 13rem;">';
     singleShow += `<img src="${show.image.medium}" class="card-img-top" alt="..."/>`;
@@ -52,62 +77,43 @@ function printSingleShowToHTML(show) //printing show card
     container.innerHTML += singleShow;
 }
 
+showsAjax(printShowsToHTML, 0);
 
-function printShowsToHTML(array) //called from the ajax function
-{
-    for (var i = 0; i < array.length; i++) 
-    {
-        printSingleShowToHTML(array[i]);
-    }
-}
 
-showsAjax();
+
+
+
+
+
+
+
+
+
+
+
 
 
 //--------------------------------------------------------------------------------------------//
-//--input movies cards printing functions--//
+//*--input movies cards printing functions:--//
 
 function onSubmit(value) //when click the search button
 {
     container.innerHTML = '';
 
-    var originalURL = 'https://api.tvmaze.com/search/shows?q=';
-    var searchValue = value;
-
-    var searchResult = originalURL + searchValue;
-
-    $.ajax(
-    {
-        type: 'GET',
-        datatype: 'json',
-        url: searchResult,
-
-        success: function (data) 
-        {
-            shows = data;
-            printInputShows(shows);
-        },
-
-        error: function (error) 
-        {
-            console.log('error : ', error);
-        },
-    })
+    showsAjax(printInputShows, 0, value);
 }
 
 function printInputShows(showsArray) //that function calls for the function that prints shows cards of the input search
 {
     console.log("data input array: ", showsArray);
-    for (var i = 0; i < showsArray.length; i++) 
-    {
+    for (let i = 0; i < showsArray.length; i++) {
         printSingleShowFromInputToHTML(showsArray[i]);
     }
 }
 
 
-function printSingleShowFromInputToHTML(singleInputShow) 
-{
-    var singleShow = '';
+function printSingleShowFromInputToHTML(singleInputShow) {
+    let singleShow = '';
     singleShow += '<div class="mt-2 col-xl-2 col-lg-4 col-md-5 col-sm-12">';
     singleShow += '<div class="card mb-2" style="width: 13rem;">';
     singleShow += `<img src="${singleInputShow.show.image.medium}" class="card-img-top" alt="..."/>`;
@@ -132,34 +138,10 @@ function printSingleShowFromInputToHTML(singleInputShow)
 }
 
 
+//*- - - - - - - - - - - - showing single show in a div at the same page by clicking- - - - - - - - - - - - - - - - - - - - -//
 
-
-
-//*- - - - - - - - - - - - showing single show in a div at the same page- - - - - - - - - - - - - - - - - - - - -//
-
-var singleShowInfoDV = document.getElementById('singleShowInformation'); //the div of the single show DV
-let baseURL = 'https://api.tvmaze.com/shows/';
-function singleShowInfoDIV(singleID)
-{
-    var singleShowURLandID = baseURL + singleID; //combine the shows URL with an id (tvmaze according to specific id API)
-    var singleShowForInfo = {}; //global object for saving
-
-    $.ajax( //ajax for getting the specific url with the id of the single show information
-    {
-        type: 'GET', 
-        dataType: 'json',
-        url: singleShowURLandID, 
-    
-        success: function(data) 
-        {
-            singleShowForInfo = data; //saving for the variable because 'data' is only for the ajax function
-            printSingleShowInfoInADivToHTML(singleShowForInfo); 
-        },
-        error: function(error) 
-        {
-            console.log('error: ', error);
-        }
-    })
+function singleShowInfoDIV(singleID) {
+    showsAjax(printSingleShowInfoInADivToHTML, singleID);
 }
 
 function printSingleShowInfoInADivToHTML(singleShowOfAnID) //function of printing the specific show
@@ -168,14 +150,18 @@ function printSingleShowInfoInADivToHTML(singleShowOfAnID) //function of printin
 
     singleShowInfoDV.innerHTML = '';
 
-    var single = '';
+    let single = '';
 
     single += '<div class = "text-center">';
 
     //*div of the image
-    single += '<div style = "width: 50%; float: right;" class = "imgDV">';
-    single += `<img src="${singleShowOfAnID.image.medium}" class="card-img-top" alt="...">`;
-    single += '</div>';
+
+    if ( singleShowOfAnID.image != null )
+    {
+        single += '<div style = "width: 50%; float: right;" class = "imgDV">';
+        single += `<img src="${singleShowOfAnID.image.medium}" class="card-img-top" alt="...">`;
+        single += '</div>';
+    }
 
 
     //*div of the tv show name
