@@ -263,9 +263,11 @@ let functionObject = () =>
 {
     let object = //every call to the function a new object is created and a new memory cell (the "let" variable is in the function)
     {
-        name: //getElementById(...),
-        phones: //getElementById(...)
+        name: getElementById(...),
+        phones: getElementById(...)
     }
     arr.push(object);
 }
+
+
 
